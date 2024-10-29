@@ -8,12 +8,14 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.aspectRatio
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.imePadding
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.text.BasicTextField
@@ -74,13 +76,16 @@ fun OnboardingScreen(navController: NavHostController) {
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Top
     ) {
+        Spacer(modifier = Modifier.height(20.dp))
         Image(
             painter = painterResource(id = R.drawable.logo),
             contentDescription = "logo",
             modifier = Modifier
-                .clip(RoundedCornerShape(20.dp))
-                .size(150.dp)
+                .width(185.dp)
+                .aspectRatio(185f / 40f) // maintain the aspect ratio
+                .clip(RoundedCornerShape(8.dp))
         )
+        Spacer(modifier = Modifier.height(40.dp))
         Text(
             text = stringResource(id = R.string.lets_get_to_know_you),
             fontSize = 24.sp,
@@ -146,7 +151,7 @@ fun OnboardingScreen(navController: NavHostController) {
             Spacer(modifier = Modifier.height(20.dp))
             Text(
                 text = registrationMessage,
-                color = if (registrationMessage.contains("unsuccessful")) Color.Red else Color.Green,
+                color = if (registrationMessage.contains("unsuccessful")) Color.Red else Color(0xFF138808),
                 modifier = Modifier.padding(top = 4.dp)
             )
             Spacer(modifier = Modifier.height(60.dp))
@@ -171,7 +176,7 @@ fun OnboardingScreen(navController: NavHostController) {
                         registrationMessage = "Registration successful!"
                         coroutineScope.launch {
                             delay(2000) // Delay to allow users to read the message
-                            navController.navigate("home")
+                            navController.navigate(Home.route)
                         }
                     }
                 },
