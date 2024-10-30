@@ -52,7 +52,7 @@ fun HomeScreen(navController: NavHostController) {
                 .align(Alignment.TopEnd)
                 .size(40.dp) // same size for both images
                 .clip(CircleShape)
-                .clickable { navController.navigate("profile") }
+                .clickable { navController.navigate(Profile.route) }
         )
         Spacer(modifier = Modifier.height(40.dp))
 
@@ -66,7 +66,7 @@ fun HomeScreen(navController: NavHostController) {
             Spacer(modifier = Modifier.height(80.dp))
             Text(text = "Home Screen", fontSize = 24.sp)
             Spacer(modifier = Modifier.height(40.dp))
-            Button(onClick = { navController.navigate("profile") }) {
+            Button(onClick = { navController.navigate(Profile.route) }) {
                 Text(text = "Go to Profile")
             }
         }
