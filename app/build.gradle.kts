@@ -1,7 +1,10 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
+    id ("kotlin-kapt")
+    id ("org.jetbrains.kotlin.plugin.serialization")
 }
+
 
 android {
     namespace = "com.littlelemon.littlelemon"
@@ -62,6 +65,11 @@ dependencies {
 
     implementation(libs.androidx.navigation.compose)
     implementation(libs.androidx.navigation.testing)
+    implementation (libs.ktor.client.android)
+    implementation (libs.ktor.client.content.negotiation)
+    implementation (libs.ktor.serialization.kotlinx.json)
+    implementation (libs.androidx.room.runtime)
+    kapt (libs.androidx.room.compiler)
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
