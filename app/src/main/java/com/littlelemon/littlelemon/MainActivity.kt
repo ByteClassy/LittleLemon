@@ -26,6 +26,7 @@ import io.ktor.serialization.kotlinx.json.json
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
+
 class MainActivity : ComponentActivity() {
     // Initializes an HTTP client for making network requests, with JSON content negotiation
     private val httpClient = HttpClient(Android) {
