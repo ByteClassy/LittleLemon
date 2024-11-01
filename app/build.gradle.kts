@@ -69,7 +69,10 @@ dependencies {
     implementation (libs.ktor.client.content.negotiation)
     implementation (libs.ktor.serialization.kotlinx.json)
     implementation (libs.androidx.room.runtime)
+    implementation(libs.androidx.runtime.livedata)
     kapt (libs.androidx.room.compiler)
+
+    implementation ("com.github.bumptech.glide:compose:1.0.0-alpha.1")
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
