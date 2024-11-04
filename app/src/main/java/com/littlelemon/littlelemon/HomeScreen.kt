@@ -4,13 +4,16 @@ package com.littlelemon.littlelemon
 
 import android.util.Log
 import androidx.compose.foundation.clickable
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material.icons.Icons
@@ -32,6 +35,7 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -44,6 +48,7 @@ import com.bumptech.glide.load.resource.bitmap.CenterInside
 import com.bumptech.glide.load.resource.bitmap.DownsampleStrategy
 import com.bumptech.glide.request.RequestOptions
 import com.littlelemon.littlelemon.ui.theme.LittleLemonColor
+
 
 @Composable
 fun HomeScreen(navController: NavHostController) {
@@ -76,7 +81,7 @@ fun HomeScreen(navController: NavHostController) {
             value = searchPhrase,
             onValueChange = { searchPhrase = it },
             leadingIcon = { Icon(imageVector = Icons.Default.Search, contentDescription = "") },
-            label = { Text("Enter search phrase") },
+            label = { Text(stringResource(R.string.enter_search_phrase)) },
             singleLine = true,
             keyboardOptions = KeyboardOptions.Default.copy(
                 imeAction = ImeAction.Done // Change enter key to "Done"
@@ -86,22 +91,19 @@ fun HomeScreen(navController: NavHostController) {
                 .padding(start = 12.dp, top = 16.dp, bottom = 16.dp, end = 12.dp)
         )
 
-        // Order For Delivery! text
         Text(
-            text = "Order For Delivery!",
+            text = stringResource(R.string.order_for_delivery),
             style = MaterialTheme.typography.headlineSmall,
             modifier = Modifier
                 .padding(vertical = 8.dp)
         )
 
-        // Category buttons
         CategoryButtons(
             categories = databaseMenuItems.groupBy { it.category }.keys.toList(),
             selectedCategory = selectedCategory,
             onCategorySelected = { selectedCategory = it }
         )
 
-        // Menu items list
         MenuItemsList(menuItems)
     }
 }
@@ -112,22 +114,25 @@ fun CategoryButtons(
     selectedCategory: String?,
     onCategorySelected: (String?) -> Unit
 ) {
-    Row(
+    LazyRow(
         modifier = Modifier
             .fillMaxWidth()
-            .padding(vertical = 8.dp)
+            .padding(vertical = 8.dp),
+        horizontalArrangement = Arrangement.spacedBy(8.dp),
+        contentPadding = PaddingValues(horizontal = 4.dp)
     ) {
-        categories.forEach { category ->
+        items(categories) { category ->
             Button(
                 onClick = { onCategorySelected(if (selectedCategory == category) null else category) },
                 colors = ButtonDefaults.buttonColors(
                     containerColor = if (selectedCategory == category) MaterialTheme.colorScheme.primary else MaterialTheme.colorScheme.secondary,
                 ),
-                modifier = Modifier.padding(horizontal = 4.dp)
+                modifier = Modifier.height(40.dp)
             ) {
                 Text(
                     text = category,
-                    color = if (selectedCategory == category) Color.White else Color.Black
+                    color = if (selectedCategory == category) Color.White else Color.Black,
+                    maxLines = 1
                 )
             }
         }
@@ -184,14 +189,6 @@ fun MenuItem(menuItem: MenuItemRoom) {
                     .fillMaxWidth()
                     .height(100.dp)
             )
-            // Commented out code:
-            // GlideImage(
-            //     model = menuItem.image,
-            //     contentDescription = menuItem.title,
-            //     modifier = Modifier
-            //         .fillMaxWidth()
-            //         .height(100.dp)
-            // )
         }
     }
     HorizontalDivider(
