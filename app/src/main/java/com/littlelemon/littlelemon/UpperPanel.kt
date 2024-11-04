@@ -14,6 +14,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
@@ -30,7 +31,7 @@ fun UpperPanel() {
         modifier = Modifier
             .fillMaxWidth()
             .background(LittleLemonColor.green)
-            .padding(start = 12.dp, end = 12.dp, top = 16.dp, bottom = 64.dp)
+            .padding(start = 12.dp, end = 12.dp, top = 16.dp, bottom = 12.dp)
     ) {
         Text(
             text = stringResource(id = R.string.title),
@@ -57,8 +58,9 @@ fun UpperPanel() {
             Image(
                 painter = painterResource(id = R.drawable.hero_image),
                 contentDescription = "Upper Panel Image",
+                contentScale = ContentScale.Crop,
                 modifier = Modifier
-                    .size(160.dp, 170.dp) // Set both width and height to 150 dp
+                    .size(150.dp)
                     .clip(RoundedCornerShape(10.dp))
             )
         }
