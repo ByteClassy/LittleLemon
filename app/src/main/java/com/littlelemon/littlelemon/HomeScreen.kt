@@ -12,8 +12,11 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Search
 import androidx.compose.material3.Card
 import androidx.compose.material3.HorizontalDivider
+import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Text
@@ -76,6 +79,7 @@ fun HomeScreen(navController: NavHostController) {
             onValueChange = {
                 searchPhrase = it
             },
+            leadingIcon = { Icon( imageVector = Icons.Default.Search, contentDescription = "") },
             label = { Text("Enter search phrase") },
             modifier = Modifier
                 .fillMaxWidth()
@@ -128,7 +132,7 @@ fun MenuItem(menuItem: MenuItemRoom) {
                 Text(
                     text = menuItem.description,
                     modifier = Modifier
-                        .padding(top = 5.dp, bottom = 5.dp)
+                        .padding(top = 4.dp, bottom = 4.dp, end = 4.dp)
                         .fillMaxWidth(0.75f),
                     style = MaterialTheme.typography.bodyMedium
                 )
