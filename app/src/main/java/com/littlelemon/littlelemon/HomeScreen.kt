@@ -63,7 +63,7 @@ fun HomeScreen(navController: NavHostController) {
     var selectedCategory by remember { mutableStateOf<String?>(null) }
 
     // Filters menu items by search phrase and category
-    var menuItems = databaseMenuItems.filter {
+    val menuItems = databaseMenuItems.filter {
         (selectedCategory == null || it.category == selectedCategory) &&
                 (searchPhrase.isEmpty() || it.title.contains(searchPhrase, ignoreCase = true))
     }
