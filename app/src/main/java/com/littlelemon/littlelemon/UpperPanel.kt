@@ -7,6 +7,7 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
@@ -24,11 +25,12 @@ import com.littlelemon.littlelemon.ui.theme.LittleLemonColor
 
 @Composable
 fun UpperPanel() {
+
     Column(
         modifier = Modifier
             .fillMaxWidth()
             .background(LittleLemonColor.green)
-            .padding(start = 12.dp, end = 12.dp, top = 16.dp, bottom = 16.dp)
+            .padding(start = 12.dp, end = 12.dp, top = 16.dp, bottom = 64.dp)
     ) {
         Text(
             text = stringResource(id = R.string.title),
@@ -43,21 +45,21 @@ fun UpperPanel() {
         )
         Row(
             horizontalArrangement = Arrangement.SpaceBetween,
-            modifier = Modifier
-                .padding(top = 20.dp)
         ) {
             Text(
                 text = stringResource(id = R.string.description),
                 color = LittleLemonColor.cloud,
-                style = MaterialTheme.typography.bodyMedium,
+                style = MaterialTheme.typography.titleMedium,
                 modifier = Modifier
-                    .padding(bottom = 28.dp, end = 20.dp)
+                    .padding(top = 30.dp, bottom = 20.dp, end = 20.dp)
                     .fillMaxWidth(0.6f)
             )
             Image(
                 painter = painterResource(id = R.drawable.hero_image),
                 contentDescription = "Upper Panel Image",
-                modifier = Modifier.clip(RoundedCornerShape(10.dp))
+                modifier = Modifier
+                    .size(160.dp, 170.dp) // Set both width and height to 150 dp
+                    .clip(RoundedCornerShape(10.dp))
             )
         }
     }
