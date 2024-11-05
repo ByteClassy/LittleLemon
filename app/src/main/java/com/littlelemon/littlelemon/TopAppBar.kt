@@ -46,7 +46,7 @@ fun TopAppBar(navController: NavHostController) {
                 .clip(RoundedCornerShape(8.dp))
         )
         Image(
-            painter = painterResource(id = R.drawable.profile),
+            painter = painterResource(id = R.drawable.user_profile),
             contentDescription = "profile",
             modifier = Modifier
                 .align(Alignment.TopEnd)
