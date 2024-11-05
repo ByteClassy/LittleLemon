@@ -1,6 +1,6 @@
 @file:OptIn(ExperimentalGlideComposeApi::class)
 
-package com.littlelemon.littlelemon
+package com.littlelemon.littlelemon.ui.screens
 
 import android.util.Log
 import androidx.compose.foundation.clickable
@@ -47,6 +47,11 @@ import com.bumptech.glide.integration.compose.GlideImage
 import com.bumptech.glide.load.resource.bitmap.CenterInside
 import com.bumptech.glide.load.resource.bitmap.DownsampleStrategy
 import com.bumptech.glide.request.RequestOptions
+import com.littlelemon.littlelemon.R
+import com.littlelemon.littlelemon.data.AppDatabase
+import com.littlelemon.littlelemon.data.MenuItemRoom
+import com.littlelemon.littlelemon.ui.components.TopAppBar
+import com.littlelemon.littlelemon.ui.components.UpperPanel
 import com.littlelemon.littlelemon.ui.theme.LittleLemonColor
 
 

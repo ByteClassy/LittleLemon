@@ -1,4 +1,4 @@
-package com.littlelemon.littlelemon
+package com.littlelemon.littlelemon.ui.components
 
 /*
 import androidx.compose.material.IconButton
@@ -26,6 +26,8 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
 import androidx.navigation.testing.TestNavHostController
+import com.littlelemon.littlelemon.R
+import com.littlelemon.littlelemon.navigation.Profile
 
 
 @Composable
