@@ -1,15 +1,38 @@
+// Theme.kt
+
 package com.littlelemon.littlelemon.ui.theme
 
-import android.app.Activity
 import android.os.Build
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Typography
 import androidx.compose.material3.darkColorScheme
 import androidx.compose.material3.dynamicDarkColorScheme
 import androidx.compose.material3.dynamicLightColorScheme
 import androidx.compose.material3.lightColorScheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.text.font.Font
+import androidx.compose.ui.text.font.FontFamily
+import com.littlelemon.littlelemon.R
+
+
+// Custom font families
+val markaziFontFamily = FontFamily(Font(R.font.markazi_regular))
+val karlaFontFamily = FontFamily(Font(R.font.karla_regular))
+
+
+// Custom typography
+val LittleLemonTypography = Typography(
+    displayLarge = Typography.displayLarge.copy(fontFamily = markaziFontFamily),
+    displayMedium = Typography.displayMedium.copy(fontFamily = markaziFontFamily),
+    displaySmall = Typography.displaySmall.copy(fontFamily = markaziFontFamily),
+    titleMedium = Typography.titleMedium.copy(fontFamily = karlaFontFamily),
+    bodyMedium = Typography.bodyMedium.copy(fontFamily = karlaFontFamily),
+    bodySmall = Typography.bodySmall.copy(fontFamily = karlaFontFamily),
+    labelSmall = Typography.labelSmall.copy(fontFamily = karlaFontFamily)
+)
+
 
 private val DarkColorScheme = darkColorScheme(
     primary = Purple80,
@@ -33,6 +56,7 @@ private val LightColorScheme = lightColorScheme(
     */
 )
 
+
 @Composable
 fun LittleLemonTheme(
     darkTheme: Boolean = isSystemInDarkTheme(),
@@ -52,7 +76,7 @@ fun LittleLemonTheme(
 
     MaterialTheme(
         colorScheme = colorScheme,
-        typography = Typography,
+        typography = LittleLemonTypography,
         content = content
     )
 }

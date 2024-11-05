@@ -17,12 +17,20 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
-import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import androidx.compose.ui.unit.sp
 import com.littlelemon.littlelemon.R
 import com.littlelemon.littlelemon.ui.theme.LittleLemonColor
+import com.littlelemon.littlelemon.ui.theme.LittleLemonTypography
+
+
+private val HorizontalPadding = 12.dp
+private val VerticalPadding = 4.dp
+private val DescriptionTopPadding = 30.dp
+private val DescriptionBottomPadding = 16.dp
+private val DescriptionEndPadding = 20.dp
+private val ImageSize = 150.dp
+private val ImageCornerRadius = 10.dp
 
 
 @Composable
@@ -32,18 +40,17 @@ fun UpperPanel() {
         modifier = Modifier
             .fillMaxWidth()
             .background(LittleLemonColor.green)
-            .padding(start = 12.dp, end = 12.dp, top = 16.dp, bottom = 12.dp)
+            .padding(start = HorizontalPadding, end = HorizontalPadding, top = VerticalPadding, bottom = VerticalPadding)
     ) {
         Text(
             text = stringResource(id = R.string.title),
-            fontSize = 40.sp,
-            fontWeight = FontWeight.Bold,
-            color = LittleLemonColor.yellow
+            style = LittleLemonTypography.displayMedium,
+            color = LittleLemonColor.yellow,
         )
         Text(
             text = stringResource(id = R.string.location),
-            fontSize = 24.sp,
-            color = LittleLemonColor.cloud
+            style = LittleLemonTypography.displaySmall,
+            color = LittleLemonColor.cloud,
         )
         Row(
             horizontalArrangement = Arrangement.SpaceBetween,
@@ -53,16 +60,16 @@ fun UpperPanel() {
                 color = LittleLemonColor.cloud,
                 style = MaterialTheme.typography.titleMedium,
                 modifier = Modifier
-                    .padding(top = 30.dp, bottom = 20.dp, end = 20.dp)
+                    .padding(top = DescriptionTopPadding, bottom = DescriptionBottomPadding, end = DescriptionEndPadding)
                     .fillMaxWidth(0.6f)
             )
             Image(
                 painter = painterResource(id = R.drawable.hero_image),
-                contentDescription = "Upper Panel Image",
+                contentDescription = "Hero Image",
                 contentScale = ContentScale.Crop,
                 modifier = Modifier
-                    .size(150.dp)
-                    .clip(RoundedCornerShape(10.dp))
+                    .size(ImageSize)
+                    .clip(RoundedCornerShape(ImageCornerRadius))
             )
         }
     }
