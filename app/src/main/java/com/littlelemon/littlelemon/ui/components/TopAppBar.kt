@@ -28,16 +28,16 @@ import androidx.navigation.NavHostController
 import androidx.navigation.testing.TestNavHostController
 import com.littlelemon.littlelemon.R
 import com.littlelemon.littlelemon.navigation.Profile
-
+import com.littlelemon.littlelemon.utils.Padding
 
 @Composable
 fun TopAppBar(navController: NavHostController) {
     Box(
         modifier = Modifier
             .fillMaxWidth()
-            .padding(4.dp)
+            .padding(Padding.HorizontalPadding)
     ) {
-        Spacer(modifier = Modifier.height(20.dp))
+        Spacer(modifier = Modifier.height(Padding.VerticalPadding))
         Image(
             painter = painterResource(id = R.drawable.logo),
             contentDescription = "logo",
@@ -56,7 +56,7 @@ fun TopAppBar(navController: NavHostController) {
                 .clip(CircleShape)
                 .clickable { navController.navigate(Profile.route) }
         )
-        Spacer(modifier = Modifier.height(20.dp))
+        Spacer(modifier = Modifier.height(Padding.VerticalPadding))
     }
 }
 

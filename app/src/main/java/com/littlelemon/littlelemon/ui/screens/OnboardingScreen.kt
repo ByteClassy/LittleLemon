@@ -49,6 +49,7 @@ import androidx.navigation.NavHostController
 import androidx.navigation.testing.TestNavHostController
 import com.littlelemon.littlelemon.R
 import com.littlelemon.littlelemon.navigation.Home
+import com.littlelemon.littlelemon.utils.Padding
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
@@ -65,7 +66,7 @@ fun OnboardingScreen(navController: NavHostController) {
     val coroutineScope = rememberCoroutineScope()
 
     val commonModifier = Modifier
-        .padding(top = 8.dp, bottom = 10.dp)
+        .padding(top = Padding.VerticalPadding, bottom = Padding.VerticalPadding)
         .height(56.dp)
         .fillMaxWidth()
 
@@ -77,7 +78,7 @@ fun OnboardingScreen(navController: NavHostController) {
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Top
     ) {
-        Spacer(modifier = Modifier.height(20.dp))
+        Spacer(modifier = Modifier.height(Padding.VerticalPadding))
         Image(
             painter = painterResource(id = R.drawable.logo),
             contentDescription = "logo",
@@ -105,12 +106,12 @@ fun OnboardingScreen(navController: NavHostController) {
             textAlign = TextAlign.Start,
             modifier = Modifier
                 .fillMaxWidth()
-                .padding(start = 20.dp, top = 40.dp),
+                .padding(start = Padding.HorizontalPadding, top = 40.dp),
         )
         Column(
             modifier = Modifier
                 .fillMaxWidth()
-                .padding(20.dp)
+                .padding(Padding.HorizontalPadding)
         ) {
             Text(text = stringResource(R.string.first_name))
             CustomTextField(
@@ -123,7 +124,7 @@ fun OnboardingScreen(navController: NavHostController) {
                 ),
                 isError = firstNameError
             )
-            Spacer(modifier = Modifier.height(20.dp))
+            Spacer(modifier = Modifier.height(Padding.VerticalPadding))
             Text(text = stringResource(R.string.last_name))
             CustomTextField(
                 value = lastName,
@@ -135,7 +136,7 @@ fun OnboardingScreen(navController: NavHostController) {
                 ),
                 isError = lastNameError
             )
-            Spacer(modifier = Modifier.height(20.dp))
+            Spacer(modifier = Modifier.height(Padding.VerticalPadding))
             Text(text = stringResource(R.string.email))
             CustomTextField(
                 value = email,
@@ -149,7 +150,7 @@ fun OnboardingScreen(navController: NavHostController) {
                 ),
                 isError = emailError
             )
-            Spacer(modifier = Modifier.height(20.dp))
+            Spacer(modifier = Modifier.height(Padding.VerticalPadding))
             Text(
                 text = registrationMessage,
                 color = if (registrationMessage.contains("unsuccessful")) Color.Red else Color(0xFF138808),

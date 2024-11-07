@@ -43,6 +43,7 @@ import androidx.navigation.NavHostController
 import androidx.navigation.testing.TestNavHostController
 import com.littlelemon.littlelemon.R
 import com.littlelemon.littlelemon.navigation.Onboarding
+import com.littlelemon.littlelemon.utils.Padding
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
@@ -60,7 +61,6 @@ fun ProfileScreen(navController: NavHostController) {
         remember { mutableStateOf(sharedPreferences.getString("email", "") ?: "") }
     var logoutMessage by remember { mutableStateOf("") }
 
-
     val commonModifier = Modifier
         .padding(top = 8.dp, bottom = 10.dp)
         .height(56.dp)
@@ -74,7 +74,7 @@ fun ProfileScreen(navController: NavHostController) {
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Top
     ) {
-        Spacer(modifier = Modifier.height(20.dp))
+        Spacer(modifier = Modifier.height(Padding.VerticalPadding))
         Image(
             painter = painterResource(id = R.drawable.logo),
             contentDescription = "logo",
@@ -91,33 +91,33 @@ fun ProfileScreen(navController: NavHostController) {
             textAlign = TextAlign.Start,
             modifier = Modifier
                 .fillMaxWidth()
-                .padding(start = 20.dp, top = 40.dp),
+                .padding(start = Padding.HorizontalPadding, top = 40.dp),
         )
-        Spacer(modifier = Modifier.height(20.dp))
+        Spacer(modifier = Modifier.height(Padding.VerticalPadding))
 
         Column(
             modifier = Modifier
                 .fillMaxWidth()
-                .padding(20.dp)
+                .padding(Padding.HorizontalPadding)
         ) {
             Text(text = stringResource(R.string.first_name))
             CustomText(
                 firstName.value,
                 modifier = commonModifier
             )
-            Spacer(modifier = Modifier.height(20.dp))
+            Spacer(modifier = Modifier.height(Padding.VerticalPadding))
             Text(text = stringResource(R.string.last_name))
             CustomText(
                 lastName.value,
                 modifier = commonModifier
             )
-            Spacer(modifier = Modifier.height(20.dp))
+            Spacer(modifier = Modifier.height(Padding.VerticalPadding))
             Text(text = stringResource(R.string.email))
             CustomText(
                 email.value,
                 modifier = commonModifier
             )
-            Spacer(modifier = Modifier.height(20.dp))
+            Spacer(modifier = Modifier.height(Padding.VerticalPadding))
             Text(
                 text = logoutMessage,
                 color = Color(0xFF138808),
@@ -143,11 +143,10 @@ fun ProfileScreen(navController: NavHostController) {
                     fontSize = 18.sp
                 )
             }
-            Spacer(modifier = Modifier.height(20.dp))
+            Spacer(modifier = Modifier.height(Padding.VerticalPadding))
         }
     }
 }
-
 
 @Composable
 fun CustomText(
@@ -175,7 +174,6 @@ fun CustomText(
 @Composable
 fun ProfileScreenPreview() {
     val context = LocalContext.current
-    val navController =
-        TestNavHostController(context) // Use a TestNavHostController for preview
+    val navController = TestNavHostController(context) // Use a TestNavHostController for preview
     ProfileScreen(navController = navController)
 }

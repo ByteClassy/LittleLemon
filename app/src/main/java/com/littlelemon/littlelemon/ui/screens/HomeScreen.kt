@@ -55,7 +55,7 @@ import com.littlelemon.littlelemon.data.MenuItemRoom
 import com.littlelemon.littlelemon.ui.components.TopAppBar
 import com.littlelemon.littlelemon.ui.components.UpperPanel
 import com.littlelemon.littlelemon.ui.theme.LittleLemonColor
-
+import com.littlelemon.littlelemon.utils.Padding
 
 @Composable
 fun HomeScreen(navController: NavHostController) {
@@ -78,7 +78,7 @@ fun HomeScreen(navController: NavHostController) {
     Column(
         modifier = Modifier
             .fillMaxWidth()
-            .padding(16.dp)
+            .padding(Padding.HorizontalPadding)
     ) {
         TopAppBar(navController)
         Spacer(modifier = Modifier.height(12.dp))
@@ -97,7 +97,7 @@ fun HomeScreen(navController: NavHostController) {
             ),
             modifier = Modifier
                 .fillMaxWidth()
-                .padding(start = 12.dp, end = 12.dp)
+                .padding(start = Padding.HorizontalPadding, end = Padding.HorizontalPadding)
         )
 
         Text(
@@ -106,7 +106,7 @@ fun HomeScreen(navController: NavHostController) {
             style = MaterialTheme.typography.headlineSmall,
             modifier = Modifier
                 .fillMaxWidth()
-                .padding(top = 12.dp, bottom = 8.dp)
+                .padding(top = Padding.VerticalPadding, bottom = 8.dp)
         )
 
         CategoryButtons(
