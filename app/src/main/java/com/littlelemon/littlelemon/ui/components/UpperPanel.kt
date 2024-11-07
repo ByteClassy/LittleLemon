@@ -25,11 +25,10 @@ import com.littlelemon.littlelemon.ui.theme.LittleLemonTypography
 
 
 private val HorizontalPadding = 12.dp
-private val VerticalPadding = 4.dp
-private val DescriptionTopPadding = 30.dp
+private val DescriptionTopPadding = 20.dp
 private val DescriptionBottomPadding = 16.dp
-private val DescriptionEndPadding = 20.dp
-private val ImageSize = 150.dp
+private val DescriptionEndPadding = 12.dp
+private val ImageSize = 140.dp
 private val ImageCornerRadius = 10.dp
 
 
@@ -40,7 +39,7 @@ fun UpperPanel() {
         modifier = Modifier
             .fillMaxWidth()
             .background(LittleLemonColor.green)
-            .padding(start = HorizontalPadding, end = HorizontalPadding, top = VerticalPadding, bottom = VerticalPadding)
+            .padding(start = HorizontalPadding, end = HorizontalPadding)
     ) {
         Text(
             text = stringResource(id = R.string.title),

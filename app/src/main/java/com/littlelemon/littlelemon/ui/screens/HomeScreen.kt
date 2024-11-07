@@ -8,6 +8,7 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
@@ -36,6 +37,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -79,7 +81,9 @@ fun HomeScreen(navController: NavHostController) {
             .padding(16.dp)
     ) {
         TopAppBar(navController)
+        Spacer(modifier = Modifier.height(12.dp))
         UpperPanel()
+        Spacer(modifier = Modifier.height(12.dp))
 
         // Search field
         OutlinedTextField(
@@ -93,14 +97,16 @@ fun HomeScreen(navController: NavHostController) {
             ),
             modifier = Modifier
                 .fillMaxWidth()
-                .padding(start = 12.dp, top = 16.dp, bottom = 16.dp, end = 12.dp)
+                .padding(start = 12.dp, end = 12.dp)
         )
 
         Text(
             text = stringResource(R.string.order_for_delivery),
+            fontWeight = FontWeight(weight = 400),
             style = MaterialTheme.typography.headlineSmall,
             modifier = Modifier
-                .padding(vertical = 8.dp)
+                .fillMaxWidth()
+                .padding(top = 12.dp, bottom = 8.dp)
         )
 
         CategoryButtons(
@@ -122,7 +128,7 @@ fun CategoryButtons(
     LazyRow(
         modifier = Modifier
             .fillMaxWidth()
-            .padding(vertical = 8.dp),
+            .padding(bottom = 8.dp),
         horizontalArrangement = Arrangement.spacedBy(8.dp),
         contentPadding = PaddingValues(horizontal = 4.dp)
     ) {
@@ -132,7 +138,7 @@ fun CategoryButtons(
                 colors = ButtonDefaults.buttonColors(
                     containerColor = if (selectedCategory == category) MaterialTheme.colorScheme.primary else MaterialTheme.colorScheme.secondary,
                 ),
-                modifier = Modifier.height(40.dp)
+                modifier = Modifier.height(36.dp)
             ) {
                 Text(
                     text = category,
@@ -149,7 +155,7 @@ fun MenuItemsList(items: List<MenuItemRoom>) {
     LazyColumn(
         modifier = Modifier
             .fillMaxHeight()
-            .padding(top = 20.dp)
+            .padding(top = 8.dp)
     ) {
         items(items = items) { menuItem ->
             MenuItem(menuItem)
@@ -174,6 +180,7 @@ fun MenuItem(menuItem: MenuItemRoom) {
             Column {
                 Text(
                     text = menuItem.title,
+                    fontWeight = FontWeight(weight = 800),
                     style = MaterialTheme.typography.titleMedium
                 )
                 Text(
@@ -181,10 +188,12 @@ fun MenuItem(menuItem: MenuItemRoom) {
                     modifier = Modifier
                         .padding(top = 4.dp, bottom = 4.dp, end = 4.dp)
                         .fillMaxWidth(0.75f),
-                    style = MaterialTheme.typography.bodyMedium
+                    fontWeight = FontWeight(weight = 400),
+                    style = MaterialTheme.typography.bodyLarge
                 )
                 Text(
                     text = "$${menuItem.price}",
+                    fontWeight = FontWeight(weight = 500),
                     style = MaterialTheme.typography.bodyLarge
                 )
             }
@@ -197,7 +206,7 @@ fun MenuItem(menuItem: MenuItemRoom) {
         }
     }
     HorizontalDivider(
-        modifier = Modifier.padding(start = 8.dp, end = 8.dp),
+        modifier = Modifier.padding(horizontal = 8.dp),
         thickness = 1.dp,
         color = LittleLemonColor.yellow
     )

@@ -35,7 +35,7 @@ fun TopAppBar(navController: NavHostController) {
     Box(
         modifier = Modifier
             .fillMaxWidth()
-            .padding(20.dp)
+            .padding(4.dp)
     ) {
         Spacer(modifier = Modifier.height(20.dp))
         Image(
@@ -56,7 +56,7 @@ fun TopAppBar(navController: NavHostController) {
                 .clip(CircleShape)
                 .clickable { navController.navigate(Profile.route) }
         )
-        Spacer(modifier = Modifier.height(40.dp))
+        Spacer(modifier = Modifier.height(20.dp))
     }
 }
 
