@@ -1,6 +1,6 @@
 // Theme.kt
 
-package com.littlelemon.littlelemon.view.theme
+package com.byteclassy.littlelemon.view.theme
 
 import android.os.Build
 import androidx.compose.foundation.isSystemInDarkTheme

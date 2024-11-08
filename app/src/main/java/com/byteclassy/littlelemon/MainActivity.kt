@@ -1,4 +1,4 @@
-package com.littlelemon.littlelemon
+package com.byteclassy.littlelemon
 
 import android.content.Context
 import android.os.Bundle
@@ -12,11 +12,11 @@ import androidx.compose.ui.Modifier
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.compose.rememberNavController
 import androidx.room.Room
-import com.littlelemon.littlelemon.data.AppDatabase
-import com.littlelemon.littlelemon.data.MenuItemNetwork
-import com.littlelemon.littlelemon.data.MenuNetwork
-import com.littlelemon.littlelemon.navigation.Navigation
-import com.littlelemon.littlelemon.view.theme.LittleLemonTheme
+import com.byteclassy.littlelemon.data.AppDatabase
+import com.byteclassy.littlelemon.data.MenuItemNetwork
+import com.byteclassy.littlelemon.data.MenuNetwork
+import com.byteclassy.littlelemon.navigation.Navigation
+import com.byteclassy.littlelemon.view.theme.LittleLemonTheme
 import io.ktor.client.HttpClient
 import io.ktor.client.call.body
 import io.ktor.client.engine.android.Android

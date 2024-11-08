@@ -1,13 +1,13 @@
-package com.littlelemon.littlelemon.navigation
+package com.byteclassy.littlelemon.navigation
 
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
-import com.littlelemon.littlelemon.view.screens.HomeScreen
-import com.littlelemon.littlelemon.view.screens.OnboardingScreen
-import com.littlelemon.littlelemon.view.screens.ProfileScreen
+import com.byteclassy.littlelemon.view.screens.HomeScreen
+import com.byteclassy.littlelemon.view.screens.OnboardingScreen
+import com.byteclassy.littlelemon.view.screens.ProfileScreen
 
 
 @Composable

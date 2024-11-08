@@ -1,4 +1,4 @@
-package com.littlelemon.littlelemon.utils
+package com.byteclassy.littlelemon.utils
 
 import androidx.compose.ui.unit.dp
 

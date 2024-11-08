@@ -1,6 +1,6 @@
 @file:OptIn(ExperimentalGlideComposeApi::class)
 
-package com.littlelemon.littlelemon.view.screens
+package com.byteclassy.littlelemon.view.screens
 
 import android.util.Log
 import androidx.compose.foundation.clickable
@@ -19,7 +19,6 @@ import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Clear
-import androidx.compose.material.icons.filled.Close
 import androidx.compose.material.icons.filled.Search
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
@@ -52,13 +51,13 @@ import com.bumptech.glide.integration.compose.GlideImage
 import com.bumptech.glide.load.resource.bitmap.CenterInside
 import com.bumptech.glide.load.resource.bitmap.DownsampleStrategy
 import com.bumptech.glide.request.RequestOptions
+import com.byteclassy.littlelemon.data.AppDatabase
+import com.byteclassy.littlelemon.data.MenuItemRoom
+import com.byteclassy.littlelemon.utils.Padding
+import com.byteclassy.littlelemon.view.components.TopAppBar
+import com.byteclassy.littlelemon.view.components.UpperPanel
+import com.byteclassy.littlelemon.view.theme.LittleLemonColor
 import com.littlelemon.littlelemon.R
-import com.littlelemon.littlelemon.data.AppDatabase
-import com.littlelemon.littlelemon.data.MenuItemRoom
-import com.littlelemon.littlelemon.view.components.TopAppBar
-import com.littlelemon.littlelemon.view.components.UpperPanel
-import com.littlelemon.littlelemon.view.theme.LittleLemonColor
-import com.littlelemon.littlelemon.utils.Padding
 
 @Composable
 fun HomeScreen(navController: NavHostController) {
@@ -99,7 +98,7 @@ fun HomeScreen(navController: NavHostController) {
                 if (searchPhrase.isNotEmpty()) {
                     IconButton(onClick = { searchPhrase = "" }) {
                         Icon(
-                           imageVector = Icons.Filled.Clear,
+                            imageVector = Icons.Filled.Clear,
                             contentDescription = "Clear",
                         )
                     }

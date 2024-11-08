@@ -1,4 +1,4 @@
-package com.littlelemon.littlelemon
+package com.byteclassy.littlelemon
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4

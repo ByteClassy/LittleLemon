@@ -1,4 +1,4 @@
-package com.littlelemon.littlelemon.view.components
+package com.byteclassy.littlelemon.view.components
 
 /*
 import androidx.compose.material.IconButton
@@ -26,9 +26,9 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
 import androidx.navigation.testing.TestNavHostController
+import com.byteclassy.littlelemon.navigation.Profile
+import com.byteclassy.littlelemon.utils.Padding
 import com.littlelemon.littlelemon.R
-import com.littlelemon.littlelemon.navigation.Profile
-import com.littlelemon.littlelemon.utils.Padding
 
 @Composable
 fun TopAppBar(navController: NavHostController) {

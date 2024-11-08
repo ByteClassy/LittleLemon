@@ -1,4 +1,4 @@
-package com.littlelemon.littlelemon.view.components
+package com.byteclassy.littlelemon.view.components
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
@@ -18,10 +18,10 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
+import com.byteclassy.littlelemon.utils.Padding
+import com.byteclassy.littlelemon.view.theme.LittleLemonColor
+import com.byteclassy.littlelemon.view.theme.LittleLemonTypography
 import com.littlelemon.littlelemon.R
-import com.littlelemon.littlelemon.view.theme.LittleLemonColor
-import com.littlelemon.littlelemon.view.theme.LittleLemonTypography
-import com.littlelemon.littlelemon.utils.Padding
 
 @Composable
 fun UpperPanel() {

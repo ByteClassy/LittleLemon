@@ -1,4 +1,4 @@
-package com.littlelemon.littlelemon.view.screens
+package com.byteclassy.littlelemon.view.screens
 
 import android.content.Context
 import androidx.compose.foundation.Image
@@ -41,9 +41,9 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
 import androidx.navigation.testing.TestNavHostController
+import com.byteclassy.littlelemon.navigation.Onboarding
+import com.byteclassy.littlelemon.utils.Padding
 import com.littlelemon.littlelemon.R
-import com.littlelemon.littlelemon.navigation.Onboarding
-import com.littlelemon.littlelemon.utils.Padding
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
