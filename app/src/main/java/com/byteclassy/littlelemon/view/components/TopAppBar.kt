@@ -37,7 +37,7 @@ fun TopAppBar(navController: NavHostController) {
             .fillMaxWidth()
             .padding(Padding.HorizontalPadding)
     ) {
-        Spacer(modifier = Modifier.height(Padding.VerticalPadding))
+//        Spacer(modifier = Modifier.height(Padding.VerticalPadding))
         Image(
             painter = painterResource(id = R.drawable.logo),
             contentDescription = "logo",

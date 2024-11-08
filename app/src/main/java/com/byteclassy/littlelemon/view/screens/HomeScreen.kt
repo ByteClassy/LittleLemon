@@ -83,7 +83,7 @@ fun HomeScreen(navController: NavHostController) {
             .padding(Padding.HorizontalPadding)
     ) {
         TopAppBar(navController)
-        Spacer(modifier = Modifier.height(12.dp))
+//        Spacer(modifier = Modifier.height(12.dp))
         UpperPanel()
         Spacer(modifier = Modifier.height(12.dp))
 
