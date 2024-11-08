@@ -16,7 +16,7 @@ import com.littlelemon.littlelemon.data.AppDatabase
 import com.littlelemon.littlelemon.data.MenuItemNetwork
 import com.littlelemon.littlelemon.data.MenuNetwork
 import com.littlelemon.littlelemon.navigation.Navigation
-import com.littlelemon.littlelemon.ui.theme.LittleLemonTheme
+import com.littlelemon.littlelemon.view.theme.LittleLemonTheme
 import io.ktor.client.HttpClient
 import io.ktor.client.call.body
 import io.ktor.client.engine.android.Android

@@ -1,4 +1,4 @@
-package com.littlelemon.littlelemon.ui.theme
+package com.littlelemon.littlelemon.view.theme
 
 import androidx.compose.material3.Typography
 import androidx.compose.ui.text.TextStyle

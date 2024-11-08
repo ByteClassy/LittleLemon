@@ -1,6 +1,6 @@
 @file:OptIn(ExperimentalGlideComposeApi::class)
 
-package com.littlelemon.littlelemon.ui.screens
+package com.littlelemon.littlelemon.view.screens
 
 import android.util.Log
 import androidx.compose.foundation.clickable
@@ -18,12 +18,15 @@ import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Clear
+import androidx.compose.material.icons.filled.Close
 import androidx.compose.material.icons.filled.Search
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Card
 import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.Icon
+import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Text
@@ -52,9 +55,9 @@ import com.bumptech.glide.request.RequestOptions
 import com.littlelemon.littlelemon.R
 import com.littlelemon.littlelemon.data.AppDatabase
 import com.littlelemon.littlelemon.data.MenuItemRoom
-import com.littlelemon.littlelemon.ui.components.TopAppBar
-import com.littlelemon.littlelemon.ui.components.UpperPanel
-import com.littlelemon.littlelemon.ui.theme.LittleLemonColor
+import com.littlelemon.littlelemon.view.components.TopAppBar
+import com.littlelemon.littlelemon.view.components.UpperPanel
+import com.littlelemon.littlelemon.view.theme.LittleLemonColor
 import com.littlelemon.littlelemon.utils.Padding
 
 @Composable
@@ -89,7 +92,19 @@ fun HomeScreen(navController: NavHostController) {
         OutlinedTextField(
             value = searchPhrase,
             onValueChange = { searchPhrase = it },
-            leadingIcon = { Icon(imageVector = Icons.Default.Search, contentDescription = "") },
+            leadingIcon = {
+                Icon(imageVector = Icons.Default.Search, contentDescription = "")
+            },
+            trailingIcon = {
+                if (searchPhrase.isNotEmpty()) {
+                    IconButton(onClick = { searchPhrase = "" }) {
+                        Icon(
+                           imageVector = Icons.Filled.Clear,
+                            contentDescription = "Clear",
+                        )
+                    }
+                }
+            },
             label = { Text(stringResource(R.string.enter_search_phrase)) },
             singleLine = true,
             keyboardOptions = KeyboardOptions.Default.copy(

@@ -1,4 +1,4 @@
-package com.littlelemon.littlelemon.ui.components
+package com.littlelemon.littlelemon.view.components
 
 /*
 import androidx.compose.material.IconButton

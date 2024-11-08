@@ -5,9 +5,9 @@ import androidx.compose.ui.Modifier
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
-import com.littlelemon.littlelemon.ui.screens.HomeScreen
-import com.littlelemon.littlelemon.ui.screens.OnboardingScreen
-import com.littlelemon.littlelemon.ui.screens.ProfileScreen
+import com.littlelemon.littlelemon.view.screens.HomeScreen
+import com.littlelemon.littlelemon.view.screens.OnboardingScreen
+import com.littlelemon.littlelemon.view.screens.ProfileScreen
 
 
 @Composable

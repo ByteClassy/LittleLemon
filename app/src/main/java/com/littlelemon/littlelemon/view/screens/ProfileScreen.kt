@@ -1,4 +1,4 @@
-package com.littlelemon.littlelemon.ui.screens
+package com.littlelemon.littlelemon.view.screens
 
 import android.content.Context
 import androidx.compose.foundation.Image
